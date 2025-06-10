@@ -63,9 +63,10 @@ public class POSH10Plugin extends Plugin {
         try {
             printer.getServiceVersion();
             printer.beginWork();
+            printer.setAlignment(1);
             printer.setTextSize(20);
             printer.printText(text);
-            printer.nextLine(10);
+            printer.nextLine(1);
             printer.endWork();
             JSObject ret = new JSObject();
             ret.put("result", "success");
@@ -85,6 +86,7 @@ public class POSH10Plugin extends Plugin {
         try {
             printer.beginWork();
             printer.printBitmap(decodedByte);
+            printer.nextLine(1);
             printer.endWork();
             JSObject ret = new JSObject();
             ret.put("result", "success");
